@@ -2,8 +2,10 @@
 
 A lightweight collaborative document editor: create and format documents, import files, share with other users, and come back to everything after a refresh.
 
-**Live app:** `[PASTE RENDER URL HERE]`  
-**Health check:** `[PASTE RENDER URL HERE]/health` returns `{"ok":true}` when the database is reachable.
+**Live app:** https://ajaia-docs-ul62.onrender.com  
+**Health check:** https://ajaia-docs-ul62.onrender.com/health returns `{"ok":true}` when the database is reachable.
+
+> The app runs on Render's free tier, so the first request after a quiet period can take 30 to 60 seconds while it wakes up.
 
 ## Demo accounts
 

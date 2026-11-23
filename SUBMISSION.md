@@ -2,7 +2,8 @@
 
 ## Links
 
-- **Live product:** `[PASTE RENDER URL]`
+- **Live product:** https://ajaia-docs-ul62.onrender.com (free tier: the first load after a quiet period can take 30 to 60 seconds)
+- **Source code:** https://github.com/mustafasaleem22/ajaia-docs
 - **Walkthrough video:** `[PASTE LOOM / YOUTUBE UNLISTED URL]` (also in `walkthrough-url.txt`)
 
 ## Test accounts (password for all: `demo1234`)
