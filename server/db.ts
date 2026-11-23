@@ -4,6 +4,8 @@ import { hashPassword } from "./auth";
 
 export const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  // Fail with a clear error instead of hanging forever when the database is unreachable.
+  connectionTimeoutMillis: 10_000,
   // Hosted Postgres (Supabase) needs SSL. Set DATABASE_SSL=false for a local database.
   ssl: process.env.DATABASE_SSL === "false" ? false : { rejectUnauthorized: false },
 });
