@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Ajaia Docs API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "start": "tsx index.ts",
+    "test": "tsx --test \"test/*.test.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mammoth": "^1.13.0",
+    "marked": "^18.2.1",
+    "multer": "^2.5.0",
+    "pg": "^8.23.1",
+    "sanitize-html": "^2.18.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "@types/sanitize-html": "^2.16.2"
+  }
+}
