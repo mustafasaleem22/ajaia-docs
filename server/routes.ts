@@ -143,6 +143,10 @@ router.post("/documents/import", upload.single("file"), async (req, res) => {
     console.error("Import failed", err);
     throw new HttpError(400, "That file could not be read. Is it a valid document?");
   }
+  // Keep imports within what the editor can save, so a document is never importable but unsaveable.
+  if (imported.html.length > MAX_CONTENT) {
+    throw new HttpError(413, "That file is too long to edit here. Try a shorter file.");
+  }
   const { rows } = await pool.query(
     "insert into documents (owner_id, title, content) values ($1, $2, $3) returning id",
     [userId, imported.title, imported.html],
