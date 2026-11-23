@@ -37,7 +37,7 @@ One owner per document keeps the rules easy to reason about. Sharing is a separa
 
 ## Reliability decisions
 
-- **Autosave with a short debounce**, a visible status ("Saving…", "All changes saved"), a retry for network or server failures, and a warning before closing the tab with unsaved work.
+- **Autosave with a short debounce** and a visible status ("Saving…", "All changes saved"). A retry for network or server failures and a warning before closing the tab with unsaved work are implemented but not tested.
 - **Optimistic concurrency:** each save sends the `updated_at` it was based on, and the database update only succeeds if that is still current. If two people edit at once, the second save gets a 409 and a clear banner instead of silently overwriting the first.
 - **Server-side HTML sanitizing** with an allow-list, applied to saved content and to every import, so a document cannot carry scripts.
 - **Validation and error handling:** title and size limits, file type and size checks, a central error handler that returns readable messages and never leaks stack traces.

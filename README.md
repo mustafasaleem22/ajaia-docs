@@ -22,8 +22,7 @@ To see sharing end to end: sign in as Alice, open the welcome document, click **
 ## What works
 
 - **Documents:** create, rename (title field), edit, autosave, reopen. The open document survives a refresh.
-- **Rich text:** bold, italic, underline, headings (H1/H2), normal text, bulleted and numbered lists. Keyboard shortcuts (Ctrl+B / I / U) work too.
-- **File upload:** `.txt`, `.md` and `.docx` files (max 5 MB) become new editable documents. Other file types are rejected with a clear message. Images inside `.docx` files are not imported.
+- **Rich text:** bold, italic, underline, headings (H1/H2), normal text, bulleted and numbered lists.- **File upload:** `.txt`, `.md` and `.docx` files (max 5 MB) become new editable documents. Other file types are rejected with a clear message. Images inside `.docx` files are not imported.
 - **Sharing:** every document has one owner. The owner can share with another user as **can edit** or **view only**, change that later, or remove access. The document list separates **My documents** from **Shared with me** and labels the access level.
 - **Persistence:** PostgreSQL (Supabase). Formatting is stored as sanitized HTML.
 - **Safety and errors:** all inputs are validated, document HTML is sanitized on the server, permissions are enforced on the server for every request, and failures show readable messages.
@@ -99,3 +98,5 @@ See `ARCHITECTURE.md` for the reasoning behind these choices and `AI_WORKFLOW.md
 - No real-time co-editing. Saves are last-writer-safe (conflicts are detected) but people do not see each other's cursors.
 - `.docx` import keeps text, headings, lists and basic formatting. Images and complex layout are dropped.
 - No export, version history or comments.
+- Not tested: performance with very large documents, and saving documents whose formatted HTML approaches the 2 MB request limit.
+- No keep-alive pinger. The free tier sleeps when idle, so the first load can take 30 to 60 seconds.
